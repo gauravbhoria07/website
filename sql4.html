@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<head>
+    <title>DBMS PROJECT</title>
+    <link rel="stylesheet" href="dbms.css">
+</head>
+
+<body>
+    <div class="heading">
+        <h1 class="head" align="center">LEARN WITH EASE</h1>
+    </div>
+    <div class="navbar">
+        <a class="a1" href="project.html" style="color: white;">HOME</a>
+        <a class="a1" href="sql.html" style="color: white;">Structured Query Language</a>
+        <a class="a1" href="about.html" style="color: white;">ABOUT US</a>
+    </div>
+    <div>
+        <u>
+            <h1>PL/SQL - Overview </h1>
+        </u>
+        <p class="para1">
+            The PL/SQL programming language was developed by Oracle Corporation in the late 1980s as procedural<br>
+            extension language for SQL and the Oracle relational database. Following are certain notable facts about
+            PL/SQL -<br>
+            PL/SQL is a completely portable, high-performance transaction-processing language.
+            PL/SQL provides a built-in, interpreted and OS independent programming environment.<br>
+            PL/SQL can also directly be called from the command-line SQL*Plus interface.
+            Direct call can also be made from external programming language calls to database.<br>
+            PL/SQL's general syntax is based on that of ADA and Pascal programming language.
+            Apart from Oracle, PL/SQL is available in TimesTen in-memory database and IBM DB2.<br>
+            SQL is the standard database language and PL/SQL is strongly integrated with SQL. PL/SQL supports both
+            static and dynamic SQL.<br>
+            Static SQL supports DML operations and transaction control from PL/SQL block. In Dynamic SQL, SQL allows
+            embedding DDL statements in PL/SQL blocks.<br>
+            PL/SQL allows sending an entire block of statements to the database at one time. <br>This reduces network
+            traffic and provides high performance for the applications.
+            PL/SQL gives high productivity to programmers as it can query, transform, and update data in a database.<br>
+            PL/SQL saves time on design and debugging by strong features, such as exception handling, encapsulation,
+            data hiding, and object-oriented data types.<br>
+            Applications written in PL/SQL are fully portable.PL/SQL provides access to predefined SQL packages.<br>
+            PL/SQL provides support for Object-Oriented Programming.PL/SQL provides support for developing Web
+            Applications and Server Pages.PL/SQL provides high security level.<br>
+            <u>
+                <h1>PL/SQL - Basic Syntax </h1>
+            </u>
+        <p class="para1">
+            <b>1.Declarations: </b>This section starts with the keyword DECLARE. <br>
+            It is an optional section and defines all variables, cursors, subprograms, and other elements to be used in
+            the program.<br>
+            <b>2.Executable Commands: </b>This section is enclosed between the keywords BEGIN and END and it is a
+            mandatory section.<br>
+            It consists of the executable PL/SQL statements of the program.<br>
+            It should have at least one executable line of code, which may be just a NULL command to indicate that
+            nothing should be executed.<br>
+            <b>3.Exception Handling: </b>his section starts with the keyword EXCEPTION.<br>
+            This optional section contains exception(s) that handle errors in the program.<br><br>
+            DECLARE <br>
+            //declarations section<br>
+            BEGIN <br>
+            //executable command(s)<br>
+            EXCEPTION <br>
+            //exception handling<br>
+            END;<br>
+            <u>
+                <h1>PL/SQL - Procedures </h1>
+            </u>
+        <p class="para1">
+            A subprogram is a program unit/module that performs a particular task. These subprograms are combined to
+            form larger programs. This is basically called the 'Modular design'.<br>
+            A subprogram can be invoked by another subprogram or program which is called the calling program.<br>
+            <b>A subprogram can be created -</b><br>
+            ->At the schema level.<br>
+            ->Inside a package.<br>
+            ->Inside a PL/SQL block.<br>
+            At the schema level, subprogram is a standalone subprogram. It is created with the CREATE PROCEDURE or the
+            CREATE FUNCTION statement. <br>
+            It is stored in the database and can be deleted with the DROP PROCEDURE or DROP FUNCTION statement.<br>
+            A subprogram created inside a package is a packaged subprogram. It is stored in the database and can be
+            deleted only when the package is<br>
+            deleted with the DROP PACKAGE statement. We will discuss packages in the chapter 'PL/SQL - Packages'.<br>
+            <u>
+                <h1>Creating a Procedure</h1>
+            </u>
+        <p class="para1">
+            A procedure is created with the CREATE OR REPLACE PROCEDURE statement.The simplified syntax<br> for the
+            CREATE OR REPLACE PROCEDURE statement is as follows -<br><br>
+            <b>CREATE [OR REPLACE] PROCEDURE procedure_name <br>
+                [(parameter_name [IN | OUT | IN OUT] type [, ...])] <br>
+                {IS | AS} <br>
+                BEGIN <br>
+                < procedure_body> <br>
+                    END procedure_name;
+            </b><br>
+        <h2>Example</h2>
+        <p class="para1">
+            <b>CREATE OR REPLACE PROCEDURE greetings <br>
+                AS <br>
+                BEGIN <br>
+                dbms_output.put_line('Hello World!');<br>
+                END; <br>
+                /</b><br>
+            <u>
+                <h1>stored Procedure</h1>
+            </u>
+        <p class="para1">
+            The syntax to create this procedure is same as we have done in previous example, the only difference is that
+            it will get<br>
+            stored at the back end and can be called anytime and anywhere.<br>A stored procedure can be called in two
+            ways -<br>
+            1.Using the EXECUTE keyword.<br>2.Calling the name of the procedure from a PL/SQL block<br>
+            <b>The above procedure named 'greetings' can be called with the EXECUTE keyword as -</b><br>
+            <b>EXECUTE greetings;</b><br>
+            <b>The above call will display -</b><br>
+            Hello World<br>
+            PL/SQL procedure successfully completed.<br>
+            <b>The procedure can also be called from another PL/SQL block -</b><br>
+            BEGIN <br>
+            greetings; <br>
+            END; <br>
+            /<br>
+            <b>The above call will display -</b><br>
+            Hello World <br>
+            PL/SQL procedure successfully completed. <br>
+            <u>
+                <h1>PL/SQL - Functions</h1>
+            </u>
+        <p class="para1">
+            In this chapter, we will discuss the functions in PL/SQL. A function is same as a procedure except that it
+            returns a value. <br>Therefore, all the discussions of the previous chapter are true for functions too.<br>
+            <u>
+                <h1>Creating a Function</h1>
+            </u>
+        <p class="para1">
+            A standalone function is created using the CREATE FUNCTION statement. The simplified syntax for the CREATE
+            OR REPLACE PROCEDURE statement is as follows -<br><br>
+            CREATE [OR REPLACE] FUNCTION function_name <br>
+            [(parameter_name [IN | OUT | IN OUT] type [, ...])] <br>
+            RETURN return_datatype <br>
+            {IS | AS} <br>
+            BEGIN <br>
+            < function_body> <br>
+                END [function_name];<br>
+                <h2>Example</h2>
+                <p class="para1">
+                    CREATE OR REPLACE FUNCTION totalCustomers<br>
+                    RETURN number IS <br>
+                    total number(2) := 0; <br>
+                    BEGIN <br>
+                    SELECT count(*) into total FROM customers; <br>
+                    RETURN total; <br>
+                    END; <br>
+                    / <br>
+                    When the above code is executed using the SQL prompt, it will produce the following result -<br>
+                    <b>Function created.</b><br>
+                    <u>
+                        <h1>Calling a Function</h1>
+                    </u>
+                <p class="para1">
+                    While creating a function, you give a definition of what the function has to do. To use a
+                    function,<br>
+                    you will have to call that function to perform the defined task. When a program calls a function,
+                    the program control is transferred to the called function.<br>
+                    A called function performs the defined task and when its return statement is executed or when
+                    the<br>
+                    last end statement is reached, it returns the program control back to the main program.<br>
+
+                    To call a function, you simply need to pass the required parameters along with the function name and
+                    if the function returns a value, <bR>
+                    then you can store the returned value. Following program calls the function totalCustomers from an
+                    anonymous block -<br><br>
+                    DECLARE <br>
+                    c number(2); <br>
+                    BEGIN <br>
+                    c := totalCustomers(); <br>
+                    dbms_output.put_line('Total no. of Customers: ' || c); <br>
+                    END; <br>
+                    /<br>
+                    When the above code is executed at the SQL prompt, it produces the following result −<br>
+                    <b>Total no. of Customers: 6 <br>
+                        PL/SQL procedure successfully completed.</b><br>
+                    <u>
+                        <h1>PL/SQL - Packages</h1>
+                    </u>
+                <p class="para1">
+                    Packages are schema objects that groups logically related PL/SQL types, variables, and subprograms.A
+                    package will have two mandatory parts -<br>
+                    1.Package specification<br>
+                    2.Package body or definition<br>
+                    <u>
+                        <h1>Package Specification</h1>
+                    </u>
+                <p class="para1">
+                    The specification is the interface to the package. It just DECLARES the types, variables, constants,
+                    exceptions, cursors, and subprograms that can be <br>
+                    referenced from outside the package. In other words, it contains all information about the content
+                    of the package, but excludes the code for the subprograms.<br>
+                    All objects placed in the specification are called public objects. Any subprogram not in the package
+                    specification but coded in the package body is called a private object.<br>
+                <h2>syntax</h2>
+                <img src="28.jpg" height="200px"><br><br>
+                <u>
+                    <h1>Package Body</h1>
+                </u>
+                <p class="para1">
+                    The package body has the codes for various methods declared in the package specification and other
+                    private<br>
+                    declarations, which are hidden from the code outside the package.<br>
+                <h2>syntax</h2>
+                <img src="29.jpg" height="400px"><br><br>
+                <h2>Example</h2>
+                <h3>The Package Specification</h3>
+                <img src="30.jpg" height="400px"><br><br>
+                <h3>Creating the Package Body</h3>
+                <img src="32.jpg" height="400px"><br><br>
+                <h3>Using The Package</h3>
+                <img src="31.jpg" height="400px"><br><br>
+        </p>
+        <a href="sql3.html"><button class="button">prev</button></a>
+        <a href="sql5.html"> <button class="button">Next</button></a>
+    </div>

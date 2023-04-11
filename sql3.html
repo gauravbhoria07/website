@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<head>
+    <title>DBMS PROJECT</title>
+    <link rel="stylesheet" href="dbms.css">
+</head>
+
+<body>
+    <div class="heading">
+        <h1 class="head" align="center">LEARN WITH EASE</h1>
+    </div>
+    <div class="navbar">
+        <a class="a1" href="project.html" style="color: white;">HOME</a>
+        <a class="a1" href="sql.html"  style="color: white;">Structured Query Language</a>
+        <a class="a1" href="about.html" style="color: white;">ABOUT US</a>
+    </div>
+    <div>
+        <u><h1>SQL JOINS </h1></u>
+        <p class="para1">
+            A JOIN clause is used to combine rows from two or more tables, based on a related column between them.<br>
+        <u><h1>INNER JOIN </h1></u>
+        <p class="para1">
+            The INNER JOIN keyword selects records that have matching values in both tables.<br>
+            <u><b>syntax: </b></u>
+            SELECT column_name(s) FROM table1 INNER JOIN table2 ON table1.column_name = table2.column_name;<br>
+            <u><b>Example: </b></u><br>
+            <img src="inner_join.jpeg" height="200px"><br><br>
+            <u><h1>LEFT JOIN </h1></u>
+        <p class="para1">
+            The LEFT JOIN keyword returns all records from the left table (table1), and the matching records from the right table (table2). <br>
+            The result is 0 records from the right side, if there is no match.<br>
+            <u><b>syntax: </b></u>
+            SELECT column_name(s) FROM table1 LEFT JOIN table2 ON table1.column_name = table2.column_name;<br>
+            <u><b>Example: </b></u><br>
+            <img src="left_join.jpeg" height="200px"><br><br>
+            <u><h1>RIGHT JOIN </h1></u>
+        <p class="para1">
+            The RIGHT JOIN keyword returns all records from the right table (table2), and the matching records from the left table (table1). <br>
+            The result is 0 records from the left side, if there is no match.<br>
+            <u><b>syntax: </b></u>
+            SELECT column_name(s) FROM table1 RIGHT JOIN table2 ON table1.column_name = table2.column_name;<br>
+            <u><b>Example: </b></u><br>
+            <img src="right_join.jpeg" height="200px"><br><br>
+            <u><h1>SET OPERATORS </h1></u>
+            <p class="para1">
+                SET operators are special type of operators which are used to combine the result of two queries.<br>
+                <u><h1>1.UNION </h1></u>
+                <p class="para1">
+                    UNION will be used to combine the result of two select statements.<br>Duplicate rows will be eliminated from the results obtained after performing the UNION operation.<br>
+                    <u><b>syntax: </b></u>
+                    SELECT *FROM table1 UNION SELECT *FROM t2;  <br>
+                    <u><b>Example: </b></u><br>
+                    SELECT *FROM customers UNION SELECT *FROM orders;  
+                    <u><h1>2.INTERSECT:</h1></u>
+                <p class="para1">
+                    It is used to combine two SELECT statements, but it only returns the records which are common from both SELECT statements.<br>
+                    <u><b>syntax: </b></u>
+                    SELECT *FROM table1 INTERSECT SELECT *FROM t2;  <br>
+                    <u><b>Example: </b></u><br>
+                    SELECT *FROM customers INTERSECT SELECT *FROM orders;
+                    <u><h1>3.MINUS:</h1></u>
+                <p class="para1">
+                    It displays the rows which are present in the first query but absent in the second query with no duplicates.<br>
+                    <u><b>syntax: </b></u>
+                    SELECT *FROM table1  MINUS *FROM t2;  <br>
+                    <u><b>Example: </b></u><br> 
+                    SELECT *FROM customers MINUS SELECT *FROM orders;
+                    <u><h1>SUBQUERIES </h1></u></p>
+        <p class="para1">
+            A subquery is a SQL query nested inside a larger query.<br>
+            The subquery can be nested inside a SELECT, INSERT, UPDATE, or DELETE statement or inside another subquery.<br>
+A subquery is usually added within the WHERE Clause of another SQL SELECT statement.You can use the comparison operators, such as >, <, or =. <br>The comparison operator can also be a multiple-row operator, such as IN, ANY, or ALL.<br>
+A subquery is also called an inner query or inner select, while the statement containing a subquery is also called an outer query or outer select.<br>
+<u><h1>Subqueries with the SELECT Statement:</h1></u>
+<p class="para1">
+<u><b>syntax: </b></u>
+SELECT column_name [, column_name ] FROM   table1 [, table2 ] WHERE  column_name OPERATOR<br>
+   (SELECT column_name [, column_name ] FROM table1 [, table2 ] [WHERE])<br>
+   <u><b>Example: </b></u><br>
+   <img src="subquery.jpeg" height="200px"><br><br></p>
+   <u><h1>Subqueries with the UPDATE Statement:</h1></u>
+   <p class="para1">
+<u><b>syntax: </b></u>
+UPDATE table SET column_name = new_value [ WHERE OPERATOR [ VALUE ]<br>
+   (SELECT COLUMN_NAMEFROM TABLE_NAME) [ WHERE) ]<br>
+   <u><b>Example: </b></u><br>
+   <img src="update_subquery.jpeg" height="200px"><br><br></p><br>
+            <a  href="sql2.html"><button class= "button" style="margin-right: 400px;">prev</button></a>
+<a  href="sql4.html"> <button class= "button">Next</button></a>
+    </div>

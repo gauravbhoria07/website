@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<head>
+    <title>DBMS PROJECT</title>
+    <link rel="stylesheet" href="dbms.css">
+</head>
+
+<body>
+    <div class="heading">
+        <h1 class="head" align="center">LEARN WITH EASE</h1>
+    </div>
+    <div class="navbar">
+        <a class="a1" href="project.html" style="color: white;">HOME</a>
+        <a class="a1" href="sql.html"  style="color: white;">Structured Query Language</a>
+        <a class="a1" href="about.html" style="color: white;">ABOUT US</a>
+    </div>
+    <div>
+        <u><h1>CLAUSES: </h1></u>
+        <p class="para1">
+        A clause in SQL is a built-in function that helps to fetch the required records from a database table.<br>
+            SQL clause helps us to retrieve a set or bundles of records from the table.SQL clause helps us to specify a condition on the columns or the records of a table.<br>
+            <b>Different clauses available in the Structured Query Language are as follows:</b><br><br>
+<b>1.WHERE CLAUSE:</b> WHERE clauses can be used to limit the number of rows to be displayed in the result set,
+ <br>it generally helps in filtering the records. It returns only those queries which fulfill the specific conditions of the WHERE clause.<br>
+ WHERE clause is used in SELECT, UPDATE, DELETE statement, etc. <br><br>
+ <u><b>syntax: </b></u>
+ SELECT * FROM TABLENAME WHERE CONDITION;<br>
+ <u><b>Example: </b></u><br>
+ <img src="where.jpeg" height="150px"><br><br>
+ <b>2.GROUP BY CLAUSE:</b>  The Group by clause in the Structured Query Language is used with Select Statement.<br> Group by clause is placed after the where clause in the SQL statement.<br>This clause is used for making the groups of the data.<br>We cannot use the group by clause without group  functions i.e. aggregate functionns.<br> 
+  The Group By clause is specially used with the aggregate function,<br>
+  i.e., max (), min (), avg (), sum (), count (), count (*) to group the result based on one or more than one column.<br><br>
+  <u><b>syntax: </b></u>
+  SELECT Group_FUNCTION(COLUMNNAME) FROM TABLENAME;<br>
+ <u><b>Example: </b></u><br>
+ <img src="group_by.jpeg" height="150px"><br><br>
+ <b>3.HAVING CLAUSE:</b> if we want to use any condition on a column in Group By clause at that time, <br>
+ we will use the HAVING clause with the Group By clause for column conditions.<br><br>
+ <u><b>syntax: </b></u>
+ TABLENAME GROUP BY COLUMNNAME HAVING CONDITION; <br>
+<u><b>Example: </b></u><br>
+<img src="having.jpeg" height="150px"><br><br>
+<b>4.ORDER BY CLAUSE:</b> This clause is used for sorting the data either in descending or ascending order.<br>We can sort the data of multiple columns. <br>By default it sorts the data in ascending order.<br>
+ The corresponding column values will be displayed in the sequence in which we have obtained the values in the earlier step.<br><br>
+ <u><b>syntax: </b></u>
+ SELECT COLUMN_NAME1, COLUMN_NAME2 FROM TABLE_NAME ORDER BY COLUMNAME; <br>
+<u><b>Example: </b></u><br>
+<img src="order_by.jpeg" height="200px"><br><br></p>
+<u><h1>CONSTRAINTS: </h1></u>
+<p class="para1">
+    Constraints are used to limit the type of data that can go into a table.This ensures the accuracy<br>
+     and reliability of the data in the table. If there is any violation between the constraint and the data action, the action is aborted.<br>
+Constraints can be column level or table level. Column level constraints apply to a column, and table level constraints apply to the whole table.<br><br>
+<b>NOT NULL - </b>Ensures that a column cannot have a NULL value.<br>
+<u><b>Example: </b></u><br>
+<img src="not_null.jpeg" height="65px"><br><br>
+<b>UNIQUE -  </b>Ensures that all values in a column are different.<br>
+<u><b>Example: </b></u><br>
+<img src="unique.jpeg" height="65px"><br><br>
+<b>CHECK -  </b>Ensures that the values in a column satisfies a specific condition.<br>
+<u><b>Example: </b></u><br>
+<img src="check.jpeg" height="65px"><br><br>
+<b>DEFAULT -  </b>Sets a default value for a column if no value is specified.<br>
+<u><b>Example: </b></u><br>
+<img src="default.jpeg" height="65px"><br><br>
+<b>PRIMARY KEY - </b>The PRIMARY KEY constraint uniquely identifies each record in a table.<br>
+Primary keys must contain UNIQUE values, and cannot contain NULL values.<br>
+A table can have only ONE primary key; and in the table, this primary key can consist of single or multiple columns (fields).<br>
+<u><b>Example: </b></u><br>
+<img src="primary_key.jpeg" height="65px"><br><br>
+<b>FOREIGN KEY - </b>The FOREIGN KEY constraint is used to prevent actions that would destroy links between tables.<br>
+A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table.<br>
+The table with the foreign key is called the child table, and the table with the primary key is called the referenced or parent table..<br>
+<u><b>Example: </b></u><br>
+<img src="18.jpg" height="65px"><br><br>
+        <a  href="sql.html"><button class="button">prev</button></a>
+<a  href="sql3.html"> <button class="button">Next</button></a>
+    </div>

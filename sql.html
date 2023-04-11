@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<head>
+    <title>DBMS PROJECT</title>
+    <link rel="stylesheet" href="dbms.css">
+</head>
+
+<body>
+    <div class="heading">
+        <h1 class="head" align="center">LEARN WITH EASE</h1>
+    </div>
+    <div class="navbar">
+        <a class="a1" href="project.html" style="color: white;">HOME</a>
+        <a class="a1" href="sql.html" style="color: white;">Structured Query Language</a>
+        <a class="a1" href="about.html" style="color: white;">ABOUT US</a>
+    </div>
+    <div>
+        <u>
+            <h1><b>SQL Queries</b></h1>
+        </u>
+        <u>
+            <h3>1.CREATE Command</h3>
+        </u>
+        <p class="para1">
+            <u><b>syntax: </b></u>
+            CREATE TABLE table_name (column1 datatype,<br>column2 datatype,<br>column3 datatype,<br>....<br>);<br>
+            <u><b>Example: </b></u><br>
+            <img src="create.jpeg" height="65px"><br><br>
+            <u>
+                <h3>2.INSERT Command</h3>
+            </u>
+        <p class="para1">
+            <u><b>syntax: </b></u>
+            INSERT INTO table_name (column1, column2, column3, ...)<br>
+            VALUES (value1, value2, value3, ...);<br>
+            <u><b>Example: </b></u><br>
+            <img src="insert.jpeg" height="65px"><br><br>
+            <u>
+                <h3>3.SELECT Command</h3>
+            </u>
+        <p class="para1">
+            <u><b>syntax: </b></u>
+            SELECT column1, column2, ...FROM table_name;<br>
+            <u><b>Example: </b></u><br>
+            <img src="select.jpeg" height="200px"><br><br>
+            <u>
+                <h3>4.DROP Command</h3>
+            </u>
+        <p class="para1">
+            <u><b>syntax: </b></u>
+            drop table table_name;<br>
+            <u><b>Example: </b></u><br>
+            <img src="drop.jpeg" height="70px"><br><br>
+            <u>
+                <h3>5.DELETE Command</h3>
+            </u>
+        <p class="para1">
+            <u><b>syntax: </b></u>
+            delete * from table_name;<br>
+            <u><b>Example: </b></u><br>
+            <img src="delete.jpeg" height="70px"><br><br>
+            <u>
+                <h3>6.update Command</h3>
+            </u>
+        <p class="para1">
+            <u><b>syntax: </b></u>
+            UPDATE table_name SET column1 = value1, column2 = value2, ...<br>
+            WHERE condition;<br>
+            <u><b>Example: </b></u><br>
+            <img src="update.jpeg" height="250px"><br><br>
+            <u>
+                <h3>7.ALTER Command</h3>
+            </u>
+            <u>
+                <h3>ADD COLUMN</h3>
+                <p class="para1">
+                    <u><b>syntax: </b></u>
+                    ALTER TABLE table_name ADD column_name datatype;<br>
+                    <u><b>Example: </b></u><br>
+                    <img src="alter_add.jpeg" height="250px"><br><br>
+                    <u>
+                        <h3>DROP COLUMN</h3>
+                        <u><b>syntax: </b></u>
+                        ALTER TABLE table_name DROP COLUMN column_name;<br>
+                        <u><b>Example: </b></u><br>
+                        <img src="alter_drop.jpeg" height="250px"><br><br>
+                        <u>
+                            <h3>8.GRANT Command</h3>
+                        </u>
+                        <p class="para1">
+                            <u><b>syntax: </b></u>
+                            GRANT privileges_names ON object TO user;<br>
+                            <u><b>Example: </b></u><br>
+                            GRANT SELECT, INSERT, DELETE, UPDATE ON Users TO 'Amit'@'localhost;
+                            <u>
+                                <h3>9.REVOKE Command</h3>
+                            </u>
+                        <p class="para1">
+                            <u><b>syntax: </b></u>
+                            REVOKE privileges ON object FROM user;<br>
+                            <u><b>Example: </b></u><br>
+                            REVOKE SELECT, INSERT, DELETE, UPDATE ON Users FROM 'Amit'@'localhost;
+                            <u>
+                                <h3>10.COMMIT Command</h3>
+                            </u>
+                        <p class="para1">
+                            <u><b>syntax: </b></u>
+                            COMMIT;<br>
+                            <u><b>Example: </b></u><br>
+                            DELETE FROM persons where person_id=15;
+                            commit;
+                            <u>
+                                <h3>11.ROLLBACK Command</h3>
+                            </u>
+                        <p class="para1">
+                            <u><b>syntax: </b></u>
+                            Rollback;<br>
+                            <u><b>Example: </b></u><br>
+                            DELETE FROM persons where person_id=15;<br>
+                            Rollback;<br>
+                            <a  href="project.html"><button class="button">prev</button></a>
+<a  href="sql2.html"> <button class="button">Next</button></a>
+                        </p>
+    </div>

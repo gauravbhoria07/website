@@ -1,0 +1,53 @@
+            .heading {
+                background-color: rgb(18, 126, 203);
+                height: 100px;
+            }
+            
+            .head {
+                color: rgb(23, 22, 13);
+                font-size: 540%;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            }
+            
+            .navbar {
+                background-color: black;
+                height: 50px;
+            }
+            
+            .a1 {
+                color: black;
+                font-style: oblique;
+                font-size: 200%;
+                margin-right: 90px;
+            }
+            
+            .para {
+                font-size: 35px;
+                font-style: italic;
+                color: rgb(22, 148, 22);
+            }
+            
+            h2,
+            h1 {
+                font-size: 38px;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            
+            h3 {
+                font-size: 28px;
+            }
+            
+            .para1 {
+                font-size: 20px;
+                color: rgb(120, 20, 220);
+            }
+            
+            .button {
+                background-color: rgb(35, 175, 35);
+                color: white;
+                padding: 10px 24px;
+                text-align: center;
+                display: inline-flex;
+                font-size: 16px;
+                margin-right: 630px;
+            }

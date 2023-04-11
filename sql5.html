@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<head>
+    <title>DBMS PROJECT</title>
+    <link rel="stylesheet" href="dbms.css">
+</head>
+
+<body>
+    <div class="heading">
+        <h1 class="head" align="center">LEARN WITH EASE</h1>
+    </div>
+    <div class="navbar">
+        <a class="a1" href="project.html" style="color: white;">HOME</a>
+        <a class="a1" href="sql.html" style="color: white;">Structured Query Language</a>
+        <a class="a1" href="about.html" style="color: white;">ABOUT US</a>
+    </div>
+    <div>
+        <u>
+            <h1>PL/SQL - Cursors</h1>
+        </u>
+        <p class="para1">
+            A cursor is a pointer to this context area. PL/SQL controls the context area through a cursor. A cursor
+            holds the rows<br>
+            (one or more) returned by a SQL statement. The set of rows the cursor holds is referred to as the active
+            set.<br>
+            You can name a cursor so that it could be referred to in a program to fetch and process the rows returned by
+            the SQL statement, one at a time.<br>
+            <b>There are two types of cursors -<br>
+                1.Implicit cursors<br>
+                2.Explicit cursors</b><br>
+            <u>
+                <h1>Implicit Cursors</h1>
+            </u>
+        <p class="para1">
+            Implicit cursors are automatically created by Oracle whenever an SQL statement is executed, when there is no
+            explicit cursor<br>
+            for the statement. Programmers cannot control the implicit cursors and the information in it.Whenever a DML
+            statement<br>
+            (INSERT, UPDATE and DELETE) is issued, an implicit cursor is associated with this statement. For INSERT
+            operations, the cursor holds the data that needs<br>
+            to be inserted. For UPDATE and DELETE operations, the cursor identifies the rows that would be affected.<br>
+            In PL/SQL, you can refer to the most recent implicit cursor as the SQL cursor, which always has attributes
+            such as %FOUND, %ISOPEN, %NOTFOUND, and %ROWCOUNT.<br>
+            The SQL cursor has additional attributes, %BULK_ROWCOUNT and %BULK_EXCEPTIONS, designed for use with the
+            FORALL statement.<br>
+            The following table provides the description of the most used attributes -<br>
+            <b>1.%FOUND: </b>Returns TRUE if an INSERT, UPDATE, or DELETE statement affected one or more rows or a<br>
+            SELECT INTO statement returned one or more rows. Otherwise, it returns FALSE.<br>
+            <b>2.%NOTFOUND: </b>The logical opposite of %FOUND. It returns TRUE if an INSERT, UPDATE, or DELETE
+            statement<br>
+            affected no rows, or a SELECT INTO statement returned no rows. Otherwise, it returns FALSE.<br>
+            <b>3.%ISOPEN:</b>Always returns FALSE for implicit cursors,because Oracle closes the SQL cursor
+            automatically after executing its associated SQL statement.<br>
+            <b>4.%ROWCOUNT:</b>Returns the number of rows affected by an INSERT, UPDATE, or DELETE statement, or
+            returned by a SELECT INTO statement.<br>
+        <h2>Example</h2>
+        <p class="para1">
+            <b> DECLARE <br>
+                total_rows number(2); <br>
+                BEGIN <br>
+                UPDATE customers <br>
+                SET salary = salary + 500; <br>
+                IF sql%notfound THEN <br>
+                dbms_output.put_line('no customers selected'); <br>
+                ELSIF sql%found THEN <br>
+                total_rows := sql%rowcount;<br>
+                dbms_output.put_line( total_rows || ' customers selected '); <br>
+                END IF; <br>
+                END; <br>
+                / </b> <br>
+            When the above code is executed at the SQL prompt, it produces the following result -,<br>
+            <b>6 customers selected ,<br>
+                PL/SQL procedure successfully completed.,</b><br>
+            <u>
+                <h1>Explicit Cursors</h1>
+            </u>
+        <p class="para1">
+            Explicit cursors are programmer-defined cursors for gaining more control over the context area. An explicit
+            cursor should be defined in the declaration section of the PL/SQL Block. <br>
+            It is created on a SELECT Statement which returns more than one row.<br><b>The syntax for creating an
+                explicit cursor is -<br>
+                CURSOR cursor_name IS select_statement; </b>
+            <u>
+                <h1>Declaring the Cursor</h1>
+            </u>
+        <p class="para1">
+            Declaring the cursor defines the cursor with a name and the associated SELECT statement. For example -<br>
+            <b>CURSOR c_customers IS SELECT id, name, address FROM customers;</b> <br>
+            <u>
+                <h1>Opening the Cursor</h1>
+            </u>
+        <p class="para1">
+            Opening the cursor allocates the memory for the cursor and makes it ready for fetching the rows returned by
+            the SQL statement into it. <br>
+            For example, we will open the above defined cursor as follows -<br>
+            <b>OPEN c_customers;</b> <br>
+            <u>
+                <h1>Fetching the Cursor</h1>
+            </u>
+        <p class="para1">
+            Fetching the cursor involves accessing one row at a time. For example, we will fetch rows from the
+            above-opened cursor as follows -<br>
+            <b>FETCH c_customers INTO c_id, c_name, c_addr;</b><br>
+            <u>
+                <h1>Closing the Cursor</h1>
+            </u>
+        <p class="para1">
+            Closing the cursor means releasing the allocated memory. For example, we will close the aboveopened cursor
+            as follows -<br>
+            <b>CLOSE c_customers;</b><br>
+        <h2>Example</h2>
+        <p class="para1">
+            Following is a complete example to illustrate the concepts of explicit cursors &minua;<br><br>
+            <b>DECLARE
+                c_id customers.id%type; <br>
+                c_name customers.name%type; <br>
+                c_addr customers.address%type; <br>
+                CURSOR c_customers is <br>
+                SELECT id, name, address FROM customers;<br>
+                BEGIN <br>
+                OPEN c_customers; <br>
+                LOOP <br>
+                FETCH c_customers into c_id, c_name, c_addr;<br>
+                EXIT WHEN c_customers%notfound; <br>
+                dbms_output.put_line(c_id || ' ' || c_name || ' ' || c_addr); <br>
+                END LOOP; <br>
+                CLOSE c_customers; <br>
+                END; <br>
+                /<br></b>
+            When the above code is executed at the SQL prompt, it produces the following result -<br><br>
+            <b>1 Ramesh Ahmedabad <br>
+                2 Khilan Delhi <br>
+                3 kaushik Kota <br>
+                4 Chaitali Mumbai <br>
+                5 Hardik Bhopal <br>
+                6 Komal MP <br>
+                PL/SQL procedure successfully completed. <br></b>
+            <u>
+                <h1>PL/SQL - Exceptions</h1>
+            </u>
+        <p class="para1">
+            An exception is an error condition during a program execution. PL/SQL supports programmers to catch such
+            conditions using EXCEPTION block in the program<br>
+            and an appropriate action is taken against the error condition. There are two types of exceptions -<br>
+            1.system-defined exceptions<br>
+            2.User-defined exceptions<br>
+            <b>Syntax for Exception Handling: <br><br>
+                DECLARE <br>
+                //declarations section<br>
+                BEGIN <br>
+                //executable command(s) <br>
+                EXCEPTION <br>
+                //exception handling goes here <br>
+                WHEN exception1 THEN <br>
+                exception1-handling-statements <br>
+                WHEN exception2 THEN <br>
+                exception2-handling-statements <br>
+                WHEN exception3 THEN <br>
+                exception3-handling-statements <br>
+                ........ <br>
+                WHEN others THEN <br>
+                exception3-handling-statements<br>
+                END;</b><br>
+            <u>
+                <h1>User-defined Exceptions</h1>
+            </u>
+        <p class="para1">
+            The syntax for declaring an exception is -<br>
+            <b>DECLARE <br>
+                my-exception EXCEPTION;<br></b>
+        <h2>Example</h2>
+        <img src="24.jpg" height="500px"><br><br>
+        <h2>output</h2>
+        <img src="25.jpg" height="200px"><br><br>
+        <u>
+            <h1>PL/SQL - Triggers</h1>
+        </u>
+        <p class="para1">
+            Triggers are stored programs, which are automatically executed or fired when some events occur. Triggers
+            are, in fact, written to be executed in response to any of the following events -<br>
+            1.A database manipulation (DML) statement (DELETE, INSERT, or UPDATE)<br>
+            2.A database definition (DDL) statement (CREATE, ALTER, or DROP).<br>
+            3.A database operation (SERVERERROR, LOGON, LOGOFF, STARTUP, or SHUTDOWN).<br>
+            <u>
+                <h1>Creating Triggers</h1>
+            </u>
+        <p class="para1">
+            <b>syntax:</b><br>
+            <img src="26.jpg" height="400px"><br><br>
+        <h2>Example</h2>
+        <img src="27.jpg" height="500px"><br><br>
+        <a href="sql4.html"><button class="button">prev</button></a>
+       
+    </div>
